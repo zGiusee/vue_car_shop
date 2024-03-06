@@ -19,30 +19,65 @@ export default {
 
 <template>
   <header>
-
-    <div class="container mb-5">
+    <div class="container py-3">
       <div class="row">
 
-        <div class="col-6">
+        <div class="col-4">
           <h1>Car Shop</h1>
         </div>
 
-        <div class="col-6 d-flex align-items-center">
-          <ul class="list-unstyled d-flex mb-0">
+        <div class="col-4 d-flex align-items-center">
+          <ul class=" mb-0">
 
-            <li class="mx-2" v-for="(link, index) in navLinks">
-              <router-link :to="{ name: link.name }">{{
-              link.label
-            }}</router-link>
+            <li v-for="(link, index) in navLinks">
+              <router-link class="link" :to="{ name: link.name }">{{ link.label }}</router-link>
+            </li>
+
+            <li>
+              About
             </li>
 
           </ul>
         </div>
 
+        <div class="col-4 d-flex align-items-center">
+          <ul>
+            <li>
+              Login
+            </li>
+
+            <li>
+              Register
+            </li>
+          </ul>
+
+        </div>
       </div>
     </div>
 
   </header>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+header {
+  background-color: #610c9f;
+  color: white;
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin-bottom: 0;
+
+    li {
+      margin: 0px 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+</style>

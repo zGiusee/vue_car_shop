@@ -21,13 +21,14 @@ export default {
     },
     methods: {
         getCars(page_number) {
-            axios.get(`${this.store.endPoint}/api/cars`, {
+            axios.get(`${this.store.endPoint}/api/cars/brand/${this.$route.params.id}`, {
                 params: {
                     page: page_number
                 }
             }).then((response) => {
 
-                this.cars = response.data.results.data;
+                this.cars = [];
+                this.cars = response.data.results;
 
                 this.currentPage = response.data.results.current_page;
                 this.lastPage = response.data.results.last_page;
@@ -60,8 +61,12 @@ export default {
                     <div>
                         <h5 class="text-white">Filter by brand:</h5>
 
-                        <router-link v-for="brand in brands" :to="{ name: 'car_brand', params: { id: brand.id } }"
-                            class="mx-3 text-white">{{ brand.name }}</router-link>
+                        <div @click="getCars()">
+                            <router-link v-for="brand in brands" :to="{ name: 'car_brand', params: { id: brand.id } }"
+                                class="mx-1 text-white">{{ brand.name
+                                }}</router-link>
+
+                        </div>
 
                     </div>
                 </div>
@@ -69,7 +74,7 @@ export default {
 
                 <div class="col-12">
 
-                    <div class="container">
+                    <div class="container min-vh-100">
                         <div class="row">
                             <Car v-for="car in cars" :car="car"></Car>
                         </div>
