@@ -61,7 +61,7 @@ export default {
                         <h5 class="text-white">Filter by brand:</h5>
 
                         <router-link v-for="brand in brands" :to="{ name: 'car_brand', params: { id: brand.id } }"
-                            class="mx-3 text-white">{{ brand.name }}</router-link>
+                            class="mx-3">{{ brand.name }}</router-link>
 
                     </div>
                 </div>
