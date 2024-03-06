@@ -28,7 +28,7 @@ export default {
             }).then((response) => {
 
                 this.cars = [];
-                this.cars = response.data.results;
+                this.cars = response.data.results.data;
 
                 this.currentPage = response.data.results.current_page;
                 this.lastPage = response.data.results.last_page;
@@ -111,7 +111,5 @@ export default {
 
 }
 
-main {
-    background-color: #E95793;
-}
+main {}
 </style>

@@ -105,8 +105,4 @@ export default {
     }
 
 }
-
-main {
-    background-color: #E95793;
-}
 </style>
