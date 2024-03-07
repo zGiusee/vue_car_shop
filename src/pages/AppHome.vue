@@ -111,25 +111,20 @@ export default {
           <div class="title">
             <img src="https://img.etimg.com/thumb/width-1200,height-1200,imgsize-92902,resizemode-75,msid-96559145/magazines/panache/rimac-nevera-worth-2-1-mn-is-worlds-fastest-electric-car-with-256mph-top-speed.jpg" alt="">
             <div class="text">
-              Trova l’auto dei tuoi sogni con Bool3Shop, il più grande sito internet di annunci auto in Europa!
+              Trova l’auto dei tuoi sogni con Bool3Shop, il più grande sito internet di offerta auto in Europa!
             </div>
           </div>
+
 
           Un caloroso benvenuto su Bool3Shop, la più grande piattaforma online in Europa per il mercato auto!
 
           Visualizza le offerte del rivenditore di auto vicino a casa, insieme a quelle di altri 43.000 rivenditori in tutta Europa. Il parco auto virtuale di Bool3Shop è enorme, tra più di 1,5 milioni di veicoli, troverai senz’altro quello che potrebbe diventare il tuo prossimo acquisto. Che si tratti di auto usate o nuove, auto eco-sostenibili o potenti vetture sportive, grazie ad Bool3Shop, troverai velocemente l’auto dei tuoi desideri a prezzi convenienti.
 
           Nel nostro mercato on-line di autoveicoli puoi trovare auto usate o nuove in pochi clic, proprio con le caratteristiche che cercavi e sempre con un contatto diretto con venditori o concessionari. Il nostro motto è: sei tu a decidere quello che trovi! Il dove e il come cercare, sei sempre tu a stabilirlo, grazie ai criteri di ricerca che andrai a impostare, come la marca preferita, il modello, il tipo di carburante, il colore, gli interni, naturalmente il prezzo e tanto altro.
-
-          Da oltre 20 anni Bool3Shop mette a tua disposizione la propria conoscenza in fatto di auto.
-
-          Qualsiasi sia la tua richiesta, da noi trovi la risposta: vetture moderne o d’epoca, utilitarie o berline di lusso, auto sportive, auto elettriche o ibride, moto o veicoli a 3 ruote, e molto altro ancora. Ti basterà dare un’occhiata al nostro magazine, alla nostra guida o alle schede delle auto.
-
-          Nel caso in cui non cerchi solamente l’auto dei tuoi sogni, ma anche la modalità ottimale di finanziamento, con la vasta gamma di servizi offerta da Bool3Shop, sarai in grado di trovare formule personalizzate e tagliate sulle tue esigenze, per prestiti e leasing, senza stress e con uno sguardo d’insieme su tutti i dettagli più importanti.
         </div>
       </div>
     </div>
-
+  
   </main>
 </template>
 
@@ -183,7 +178,7 @@ main {
     {
       position:absolute;
       top:250px;
-      left:100px;
+      left:70px;
       color:white;
     }
   }
