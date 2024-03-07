@@ -81,12 +81,13 @@ export default {
                 <div class="col-12 mb-5">
                     <div class="page_button_container">
                         <div>
-                            <button :class="currentPage == 1 ? 'disabled' : ''" @click=" getCars(currentPage - 1)"
+                            <button :class="currentPage == 1 ? 'my_disabled' : ''" @click=" getCars(currentPage - 1)"
                                 class="my_front_button"><i class="bi bi-chevron-left"></i></button>
                         </div>
                         <div>
-                            <button :class="currentPage == lastPage ? 'disabled' : ''" @click="getCars(currentPage + 1)"
-                                class="my_front_button"><i class="bi bi-chevron-right"></i></button>
+                            <button :class="currentPage == lastPage ? 'my_disabled' : ''"
+                                @click="getCars(currentPage + 1)" class="my_front_button"><i
+                                    class="bi bi-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -105,6 +106,18 @@ export default {
 
     button {
         margin: 5px;
+    }
+}
+
+.my_disabled {
+    background-color: rgba(128, 0, 128, 0.199);
+    pointer-events: none;
+
+    &:hover {
+        border-radius: 0px;
+        background-color: rgba(128, 0, 128, 0.199);
+        color: white;
+        border: 1px solid transparent;
     }
 }
 
