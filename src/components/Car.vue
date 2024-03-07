@@ -60,13 +60,15 @@ export default {
                         </ul>
                     </div>
 
+                </div>
+
+                <div class="col-12 pt-3">
                     <div class="button_container">
                         <router-link class=" text-decoration-none" :to="{ name: 'detail_car', params: { id: car.id } }">
                             <span class="my_front_button">Details</span>
                         </router-link>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -97,12 +99,12 @@ export default {
 
         li {
             font-size: 14px;
+            margin: 10px 0px;
         }
     }
 
     .button_container {
-        margin-left: 120px;
-        margin-bottom: 10px;
+        padding: 10px;
     }
 
 }
