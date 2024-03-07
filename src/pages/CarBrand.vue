@@ -46,7 +46,7 @@ export default {
 </script>
 
 <template>
-    <main class="py-5">
+    <main class="py-5 my_bg_black">
         <div class="container">
             <div class="row">
 
@@ -56,21 +56,16 @@ export default {
                     </div>
                 </div>
 
-
                 <div class="col-6  d-flex align-items-center">
-                    <div>
+                    <div class="text-center">
                         <h5 class="text-white">Filter by brand:</h5>
 
                         <div @click="getCars()">
                             <router-link v-for="brand in brands" :to="{ name: 'car_brand', params: { id: brand.id } }"
-                                class="mx-1 text-white">{{ brand.name
-                                }}</router-link>
-
+                                class="brand">{{ brand.name }}</router-link>
                         </div>
-
                     </div>
                 </div>
-
 
                 <div class="col-12">
 
@@ -86,11 +81,11 @@ export default {
                     <div class="page_button_container">
                         <div>
                             <button :class="currentPage == 1 ? 'disabled' : ''" @click=" getCars(currentPage - 1)"
-                                class="btn btn-secondary"><i class="bi bi-chevron-left"></i></button>
+                                class="my_front_button"><i class="bi bi-chevron-left"></i></button>
                         </div>
                         <div>
                             <button :class="currentPage == lastPage ? 'disabled' : ''" @click="getCars(currentPage + 1)"
-                                class="btn btn-secondary"><i class="bi bi-chevron-right"></i></button>
+                                class="my_front_button"><i class="bi bi-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -101,6 +96,8 @@ export default {
 </template>
 
 <style scoped lang="scss">
+@use '../styles/generals.scss' as *;
+
 .page_button_container {
     display: flex;
     justify-content: center;
@@ -108,8 +105,17 @@ export default {
     button {
         margin: 5px;
     }
-
 }
 
-main {}
+.brand {
+    margin-right: 15px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        color: $purple;
+        text-decoration: underline white;
+
+    }
+}
 </style>

@@ -16,4 +16,29 @@ $dark_pink: #e95793;
     font-style: normal;
 }
 
+.my_front_button {
+    padding: 8px 23px;
+    background-color: $purple;
+    color: white;
+    font-size: 12px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.5s;
 
+    span {
+        text-decoration: none;
+    }
+
+    &:hover {
+        border-radius: 15px;
+        background-color: #ffffff;
+        color: $purple;
+        border: 1px solid $purple;
+    }
+}
+
+.my_bg_black{
+
+    background-color: #1d1d1d;
+}

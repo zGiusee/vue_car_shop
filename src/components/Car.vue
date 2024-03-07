@@ -1,14 +1,34 @@
 <script>
+import { store } from '../store';
 export default {
     props: {
         car: Object,
     },
     data() {
         return {
-
+            store,
         }
     },
     methods: {
+        getImage() {
+            let image;
+
+            if (this.car.img != null) {
+
+                if (this.car.img.includes('https')) {
+
+                    return `${this.car.img}`
+
+                } else {
+                    image = `/storage/${this.car.img}`
+                }
+
+            } else {
+                image = '/storage/cars_image/carplaceholder.png'
+            }
+
+            return `${this.store.endPoint}${image}`
+        },
 
     },
 }
@@ -16,22 +36,35 @@ export default {
 </script>
 
 <template>
-    <div class="col-3 my-4">
+    <div class="col-4 my-4">
 
-        <div class="card" style="width: 19rem;">
-            <img class="card-img-top " :src="car.img" :alt="car.model">
-            <div class="card-body">
-                <h5 class="card-title">{{ car.model }}</h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Car price: {{ car.price }}$</li>
-                    <li class="list-group-item">Car year {{ car.year }}</li>
-                    <li class="list-group-item">Fuel type: {{ car.fuel_type }}</li>
-                </ul>
+        <div class="my_card container">
+            <div class="row">
 
-                <div class="py-2">
-                    <router-link :to="{ name: 'detail_car', params: { id: car.id } }">
-                        <span class="btn btn-succes border-1 border-black">Details</span>
-                    </router-link>
+                <div class="col-5">
+                    <div>
+                        <img :src="getImage()" :alt="car.model">
+                    </div>
+                </div>
+
+                <div class="col-7">
+                    <div>
+                        <h5 class="card-title">{{ car.model }}</h5>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li>Car price: {{ car.price.toFixed(2) }} €</li>
+                            <li>Car year {{ car.year }}</li>
+                            <li>Fuel type: {{ car.fuel_type }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="button_container">
+                        <router-link class=" text-decoration-none" :to="{ name: 'detail_car', params: { id: car.id } }">
+                            <span class="my_front_button">Details</span>
+                        </router-link>
+                    </div>
                 </div>
 
             </div>
@@ -40,4 +73,37 @@ export default {
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@use '../styles/generals.scss' as *;
+
+.my_card {
+
+    color: white;
+    border: 1px solid $purple;
+    padding: 10px 10px;
+
+    img {
+        width: 170px;
+        height: 170px;
+    }
+
+    h5 {
+        padding: 7px;
+        font-size: 18px;
+    }
+
+    ul {
+        padding: 10px 25px;
+
+        li {
+            font-size: 14px;
+        }
+    }
+
+    .button_container {
+        margin-left: 120px;
+        margin-bottom: 10px;
+    }
+
+}
+</style>
